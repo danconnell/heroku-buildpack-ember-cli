@@ -88,7 +88,7 @@ else
 fi
 
 status "Extracting Openresty (Nginx)"
-tar -zxvf $build_dir/vendor/openresty-1.19.15.1-heroku-build.tar.gz -C $build_dir/vendor
+tar -zxvf $build_dir/vendor/openresty-1.9.15.1-heroku-build.tar.gz -C $build_dir/vendor
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
