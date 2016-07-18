@@ -87,8 +87,9 @@ else
   status "Using default npm version: `npm --version`"
 fi
 
-status "Extracting Openresty (Nginx)"
-tar -zxvf $build_dir/vendor/openresty-1.9.15.1-heroku-build.tar.gz -C $build_dir/vendor
+status "Downloading and installing Openresty (Nginx)"
+nginx_url=https://s3-eu-west-1.amazonaws.com/bidvine-ops/openresty-1.9.15.1-heroku-build.tar.gz
+curl $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
