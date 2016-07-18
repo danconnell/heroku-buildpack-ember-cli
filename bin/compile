@@ -89,7 +89,7 @@ fi
 
 status "Downloading and installing Openresty (Nginx)"
 nginx_url=https://github.com/davidad/heroku-buildpack-openresty/releases/download/v1.5.11.1-1/openresty_build-1.5.11.1-1.tar.gz
-curl $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
+curl -L $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
