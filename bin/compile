@@ -87,9 +87,12 @@ else
   status "Using default npm version: `npm --version`"
 fi
 
-status "Downloading and installing Openresty (Nginx)"
+status "Setting up Openresty"
+cp $bp_dir/vendor/openresty-1.9.15.1.tar.gz $build_dir/vendor
 cd $build_dir/vendor
 tar xzf openresty-1.9.15.1.tar.gz
+
+cd $build_dir
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
