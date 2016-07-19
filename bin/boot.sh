@@ -8,4 +8,4 @@ touch $HOME/logs/nginx/access.log $HOME/logs/nginx/error.log
 
 (tail -f -n 0 $HOME/logs/nginx/*.log &)
 
-nginx -p $HOME -c $HOME/config/nginx.conf
+exec /tmp/openresty/nginx/sbin/nginx -p $HOME -c $HOME/config/nginx.conf
