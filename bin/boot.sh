@@ -8,6 +8,4 @@ touch $HOME/logs/nginx/access.log $HOME/logs/nginx/error.log
 
 (tail -f -n 0 $HOME/logs/nginx/*.log &)
 
-build_path=$(ls $HOME/vendor/openresty-1.9.15.1/build/luajit-root/tmp | head -n 1)
-export LD_LIBRARY_PATH=$HOME/vendor/openresty-1.9.15.1/build/luajit-root/tmp/$build_path/vendor/openresty/luajit/lib:$LD_LIBRARY_PATH
-exec $HOME/vendor/openresty/nginx/sbin/nginx -p $HOME -c $HOME/config/nginx.conf
+exec $HOME/vendor/nginx/sbin/nginx -p $HOME -c $HOME/config/nginx.conf
