@@ -88,9 +88,9 @@ else
 fi
 
 status "Setting up Openresty"
-cp $bp_dir/vendor/openresty-1.9.15.1.tar.gz $build_dir/vendor
+cp $bp_dir/vendor/openresty-1.9.15.1-heroku-build.tar.gz $build_dir/vendor
 cd $build_dir/vendor
-tar xzf openresty-1.9.15.1.tar.gz
+tar xzf openresty-1.9.15.1-heroku-build.tar.gz
 
 cd $build_dir
 
