@@ -175,7 +175,7 @@ if [ "$GIT_SSH_KEY" != "" ]; then
 fi
 
 status "Pruning cached dependencies not specified in package.json"
-npm prune 2>&1 | indent
+# npm prune 2>&1 | indent
 
 
 status "Installing dependencies"
