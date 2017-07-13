@@ -174,18 +174,17 @@ if [ "$GIT_SSH_KEY" != "" ]; then
   ssh -oStrictHostKeyChecking=no -T git@github.com || true
 fi
 
-status "Pruning cached dependencies not specified in package.json"
-# npm prune 2>&1 | indent
-
-
-status "Installing dependencies"
-
 if type bower > /dev/null 2>&1 || test -e $build_dir/node_modules/bower/bin/bower; then
   status "Bower already exists"
 else
   status "Installing bower which is required by other dependencies"
   npm install bower --save-dev --quiet --no-optional --userconfig $build_dir/.npmrc 2>&1 | indent
 fi
+
+status "Pruning cached dependencies not specified in package.json"
+npm prune 2>&1 | indent
+
+status "Installing dependencies"
 
 # Make npm output to STDOUT instead of its default STDERR
 npm install --quiet --no-optional --userconfig $build_dir/.npmrc 2>&1 | indent
