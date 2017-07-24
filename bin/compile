@@ -181,6 +181,9 @@ else
   npm install bower --save-dev --quiet --no-optional --userconfig $build_dir/.npmrc 2>&1 | indent
 fi
 
+status "Verifying npm cache"
+npm cache verify
+
 status "Pruning cached dependencies not specified in package.json"
 npm prune 2>&1 | indent
 
