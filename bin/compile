@@ -177,8 +177,8 @@ fi
 if type bower > /dev/null 2>&1 || test -e $build_dir/node_modules/bower/bin/bower; then
   status "Bower already exists"
 else
-  status "Installing bower which is required by other dependencies"
-  npm install bower --quiet --no-optional --userconfig $build_dir/.npmrc 2>&1 | indent
+  status "Installing bower which may be required by npm dependencies"
+  npm install bower --global --quiet --no-save --no-optional --no-package-lock --userconfig $build_dir/.npmrc 2>&1 | indent
 fi
 
 status "Verifying npm cache"
