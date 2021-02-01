@@ -87,10 +87,8 @@ else
   status "Using default npm version: `npm --version`"
 fi
 
-status "Setting up Openresty"
-cp $bp_dir/vendor/openresty-1.9.15.1-heroku-build.tar.gz $build_dir/vendor
-cd $build_dir/vendor
-tar xzf openresty-1.9.15.1-heroku-build.tar.gz
+status "Copying Openresty"
+cp -r "$bp_dir/vendor/openresty-1.13.6.2-heroku-18" "$build_dir/vendor/openresty"
 
 cd $build_dir
 
